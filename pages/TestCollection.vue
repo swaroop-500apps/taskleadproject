@@ -1,0 +1,3 @@
+<template>
+    <CollectionsMain></CollectionsMain>
+</template>
