@@ -43,10 +43,14 @@
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.mode_of_payment }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.down_payment }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.is_loan_required }}</td>
-                  <!-- <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, {{ person.name
-                    }}</span></a>
-                  </td> -->
+                  <button type="button" class="text-sm font-semibold m-2 leading-6 text-gray-900" @click="editButton()">
+                    Edit
+                  </button>
+                  <button type="button"
+                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    @click="deleteButton()">
+                    Delete
+                  </button>
                 </tr>
               </tbody>
             </table>

@@ -9,19 +9,23 @@
             <collectionsList :tableData="tableData">
             </collectionsList>
         </div>
-        <collectionsAdd  @submittableData="submitTableData" :sidebarData="sidebarDataForm" v-if="open" :open="open"></collectionsAdd>
+        <collectionsAdd @submittableData="submitTableData" :sidebarData="sidebarDataForm" v-if="open" :open="open"
+            :key="render"></collectionsAdd>
+            <CollectionsEdit :saveEditData="saveEditData"></CollectionsEdit>
     </div>
 </template>
 <script setup>
 // import { logger } from "@nuxt/kit";
 import {ref} from "vue";
 const tableDataIndex = ref(0);
-const tableData = ref([])
+// const tableData = ref([])
 // const { $bus } = useNuxtApp();
+const render = ref(0);
 const open = ref(false);
 const addlead = () => {
     console.log("open side bar");
     open.value = true
+    render.value++
 }
 const sidebarDataForm = ref({
     name: "",
@@ -69,6 +73,7 @@ const submitTableData = async (form) => {
     );
     console.log("tableData",tableData)
     tableData.value.unshift(form);
+    console.log("sidebarDataForm", sidebarDataForm)
     sidebarDataForm.value = {};
 };
 //For Edit form
