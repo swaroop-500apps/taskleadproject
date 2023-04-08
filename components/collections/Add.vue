@@ -174,12 +174,12 @@ const emits = defineEmits(["submittableData"]);
 const props = defineProps({
     // Declare props here
     sidebarData:{type:Object} ,
-    open: Boolean,
+    open: {type:Boolean},
 });
 // const addlead = () => {
 //     open.value = true
 // }
-// Save Templats
+// Save Templates
 const savemethod = async () => {
     console.log("save method");
    
@@ -201,7 +201,7 @@ const savemethod = async () => {
         cdata2: "string",
         project_id: "string"
     };
-    console.log("form",form)
+    console.log("form add",form)
     // To assign uid to edit form
     if (props.sidebarData && props.sidebarData.uid) form["uid"] = props.sidebarData.uid;
     emits("submittableData", form);

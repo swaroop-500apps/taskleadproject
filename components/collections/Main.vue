@@ -1,6 +1,6 @@
 <template>
-    <div class="grid grid-rows-3 grid-flow-col grid-cols-4 border w-[80vw] mx-auto my-5 rounded-lg pr-[4px]">
-        <div class="row-span-3 bg-gray-50 border-r p-5 rounded-l-lg h-[calc(103vh-150px)] overflow-auto">
+    <div >
+        <div>
             <div class="pb-3 w-[100%]">
                 <button type="button"
                     class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -13,8 +13,10 @@
     </div>
 </template>
 <script setup>
+// import { logger } from "@nuxt/kit";
 import {ref} from "vue";
 const tableDataIndex = ref(0);
+const tableData = ref([])
 // const { $bus } = useNuxtApp();
 const open = ref(false);
 const addlead = () => {
@@ -50,6 +52,7 @@ const sidebarDataForm = ref({
 // For add form
 const submitTableData = async (form) => {
     // if (form.uid) return updateTableData(form)
+    console.log("form main",form)
     let postoptions = {
         method: "POST",
         headers: {
@@ -64,6 +67,7 @@ const submitTableData = async (form) => {
         "https://v1-orm-gharpe.mercury.infinity-api.net/api/leads/",
         postoptions
     );
+    console.log("tableData",tableData)
     tableData.value.unshift(form);
     sidebarDataForm.value = {};
 };

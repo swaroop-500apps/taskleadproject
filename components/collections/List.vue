@@ -14,13 +14,11 @@
                   <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Source</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Phone Number</th>
-                  <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Email
-                  </th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Email</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Purpose of Buying</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Address</th>
-                  <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Mode of
-                    payment</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Mode of payment</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Down Payment</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Loan Required</th>
                   <!-- <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
@@ -38,12 +36,10 @@
                   </td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.source }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.phone_number }}</td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.role }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.email }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.status }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.purpose_of_buying }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.address }}</td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.preferred_floor }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.mode_of_payment }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.down_payment }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.is_loan_required }}</td>
@@ -63,6 +59,7 @@
 </template>
     
 <script setup>
+import {defineProps} from "vue"
 const open = ref(false)
 const props = defineProps({
   // Declare props
