@@ -43,7 +43,7 @@
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.mode_of_payment }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.down_payment }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.is_loan_required }}</td>
-                  <button type="button" class="text-sm font-semibold m-2 leading-6 text-gray-900" @click="editButton()">
+                  <button type="button" class="text-sm font-semibold m-2 leading-6 text-gray-900" @click="editButton('emitEditData',data)">
                     Edit
                   </button>
                   <button type="button"
@@ -63,10 +63,11 @@
 </template>
     
 <script setup>
-import {defineProps} from "vue"
+import {defineProps,defineEmits} from "vue"
 const open = ref(false)
 const props = defineProps({
   // Declare props
   tableData: Array,
 });
+const editButton = defineEmits(["emitEditData"])
 </script>
